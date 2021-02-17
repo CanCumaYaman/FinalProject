@@ -9,6 +9,7 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            //CategoryTest();
             ProductTest();
         }
 
