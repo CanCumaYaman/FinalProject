@@ -15,6 +15,10 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using Core.Utilities.Business;
+using Business.BusinessAspects.Autofac;
+using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Transaction;
+using Core.Aspects.Autofac.Performance;
 
 namespace Business.Concrete
 {
@@ -30,8 +34,9 @@ namespace Business.Concrete
             _categoryService = categoryService;
             
         }
-        
+        [SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
+        [CacheRemoveAspect("IProductService.Get")]
         public IResult Add(Product product)
         {
           IResult result=BusinessRules.Run(CheckIfProductCounfOfCategoryCorrect(product.CategoryID), CheckIfProductNameExists(product.ProductName), CheckIfCategoryLimitExceded());
@@ -43,7 +48,7 @@ namespace Business.Concrete
           _productDal.Add(product);
           return new SuccessResult(Messages.ProductAdded);      
             }
-
+        [CacheAspect]
         public IDataResult<List<Product>> GetAll()
         {
 
@@ -60,7 +65,8 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Product>> (_productDal.GetAll(p => p.CategoryID == id));
 
         }
-
+        [CacheAspect]
+        [PerformanceAspect(5)]
         public IDataResult<Product> GetById(int productId)
         {
             return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductID == productId));
@@ -78,10 +84,28 @@ namespace Business.Concrete
         }
 
         [ValidationAspect(typeof(ProductValidator))]
+        [CacheRemoveAspect("IProductService.Get")]
         public IResult Update(Product product)
         {
-
+            var result = _productDal.GetAll(p => p.CategoryID == product.CategoryID).Count;
+            if (result >= 10)
+            {
+                return new ErrorResult(Messages.ProductCountOfCategoryError);
+            }
             throw new NotImplementedException();
+        }
+        [TransactionScopeAspect]
+        public IResult AddTransactionalTest(Product product)
+        {
+            Add(product);
+            if (product.UnitPrice < 10)
+            {
+                throw new Exception("");
+            }
+
+            Add(product);
+
+            return null;
         }
 
         private IResult CheckIfProductCounfOfCategoryCorrect(int categoryid)
@@ -112,5 +136,7 @@ namespace Business.Concrete
             }
             return new SuccessResult();
         }
+
+       
     }
 }
