@@ -1,0 +1,12 @@
+
+2021-06-04 19:22:25.725 +03:00 [INF] Application Starting.
+2021-06-04 19:22:33.631 +03:00 [INF] GetAll started with serilog
+2021-06-04 19:22:34.858 +03:00 [INF] GetAll ended with serilog
+2021-06-04 19:29:34.311 +03:00 [INF] Application Starting.
+2021-06-04 19:29:39.772 +03:00 [INF] System.Reflection.ParameterInfo[] started.
+2021-06-04 19:29:42.789 +03:00 [INF] GetAll successfully worked
+2021-06-04 19:29:42.790 +03:00 [INF] GetAll has finished working.
+2021-06-04 19:31:21.194 +03:00 [INF] Application Starting.
+2021-06-04 19:31:26.709 +03:00 [INF] System.Object[] started.
+2021-06-04 19:31:27.938 +03:00 [INF] GetAll successfully worked
+2021-06-04 19:31:27.941 +03:00 [INF] GetAll has finished working.

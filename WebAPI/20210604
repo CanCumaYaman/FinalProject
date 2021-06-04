@@ -1,0 +1,24 @@
+2021-06-04 01:49:32.325 +03:00 [INF] User profile is available. Using 'C:\Users\ASUS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-06-04 01:49:32.676 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-04 01:49:32.676 +03:00 [INF] Hosting environment: Development
+2021-06-04 01:49:32.676 +03:00 [INF] Content root path: D:\Visual Studio 2019 Community\FinalProject\WebAPI
+2021-06-04 01:49:32.764 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/weatherforecast  
+2021-06-04 01:49:32.921 +03:00 [INF] Executing endpoint 'WebAPI.Controllers.WeatherForecastController.Get (WebAPI)'
+2021-06-04 01:49:32.954 +03:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[WebAPI.WeatherForecast] Get() on controller WebAPI.Controllers.WeatherForecastController (WebAPI).
+2021-06-04 01:49:33.050 +03:00 [INF] Executing action method WebAPI.Controllers.WeatherForecastController.Get (WebAPI) - Validation state: "Valid"
+2021-06-04 01:49:33.059 +03:00 [INF] Executed action method WebAPI.Controllers.WeatherForecastController.Get (WebAPI), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.2511ms.
+2021-06-04 01:49:33.064 +03:00 [INF] Executing ObjectResult, writing value of type 'WebAPI.WeatherForecast[]'.
+2021-06-04 01:49:33.101 +03:00 [INF] Executed action WebAPI.Controllers.WeatherForecastController.Get (WebAPI) in 140.8718ms
+2021-06-04 01:49:33.102 +03:00 [INF] Executed endpoint 'WebAPI.Controllers.WeatherForecastController.Get (WebAPI)'
+2021-06-04 01:49:33.112 +03:00 [INF] Request finished in 350.9525ms 200 application/json; charset=utf-8
+2021-06-04 01:49:34.484 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/api/Products/getall  
+2021-06-04 01:49:34.506 +03:00 [INF] Executing endpoint 'WebAPI.Controllers.ProductsController.GetAll (WebAPI)'
+2021-06-04 01:49:34.511 +03:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll() on controller WebAPI.Controllers.ProductsController (WebAPI).
+2021-06-04 01:49:34.709 +03:00 [INF] Executing action method WebAPI.Controllers.ProductsController.GetAll (WebAPI) - Validation state: "Valid"
+2021-06-04 01:49:34.777 +03:00 [INF] GetAll started with serilog
+2021-06-04 01:49:35.978 +03:00 [INF] GetAll ended with serilog
+2021-06-04 01:49:35.979 +03:00 [INF] Executed action method WebAPI.Controllers.ProductsController.GetAll (WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1269.4608ms.
+2021-06-04 01:49:35.979 +03:00 [INF] Executing ObjectResult, writing value of type 'Core.Utilities.Results.SuccessDataResult`1[[System.Collections.Generic.List`1[[Entities.Concrete.Product, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2021-06-04 01:49:35.988 +03:00 [INF] Executed action WebAPI.Controllers.ProductsController.GetAll (WebAPI) in 1476.927ms
+2021-06-04 01:49:35.988 +03:00 [INF] Executed endpoint 'WebAPI.Controllers.ProductsController.GetAll (WebAPI)'
+2021-06-04 01:49:35.989 +03:00 [INF] Request finished in 1505.5375ms 200 application/json; charset=utf-8

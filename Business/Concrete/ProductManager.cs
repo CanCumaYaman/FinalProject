@@ -19,6 +19,8 @@ using Business.BusinessAspects.Autofac;
 using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Transaction;
 using Core.Aspects.Autofac.Performance;
+using Core.Aspects.Autofac.Logging;
+
 
 namespace Business.Concrete
 {
@@ -26,6 +28,7 @@ namespace Business.Concrete
     {
         IProductDal _productDal;
         ICategoryService _categoryService;
+        
 
         public ProductManager(IProductDal productDal, ICategoryService categoryService)
         {
@@ -34,9 +37,10 @@ namespace Business.Concrete
             _categoryService = categoryService;
             
         }
-        //[SecuredOperation("product.add,admin")]
+        [SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
         [CacheRemoveAspect("IProductService.Get")]
+        [LogAspect]
         public IResult Add(Product product)
         {
           IResult result=BusinessRules.Run(CheckIfProductCounfOfCategoryCorrect(product.CategoryID), CheckIfProductNameExists(product.ProductName), CheckIfCategoryLimitExceded());
@@ -49,6 +53,7 @@ namespace Business.Concrete
           return new SuccessResult(Messages.ProductAdded);      
             }
         [CacheAspect]
+        [LogAspect]
         public IDataResult<List<Product>> GetAll()
         {
 
@@ -56,7 +61,7 @@ namespace Business.Concrete
             //Business codes
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(),Messages.ProductsListed) ;
         }
-
+        [LogAspect]
         public IDataResult<List<Product>> GetAllByCategoryId(int id)
         {
             return new SuccessDataResult<List<Product>> (_productDal.GetAll(p => p.CategoryID == id));
@@ -64,12 +69,13 @@ namespace Business.Concrete
         }
         [CacheAspect]
         [PerformanceAspect(5)]
+        [LogAspect]
         public IDataResult<Product> GetById(int productId)
         {
             return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductID == productId));
 
         }
-
+        [LogAspect]
         public IDataResult<List<Product>> GetByUnitPrice(decimal min, decimal max)
         {
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(p=>p.UnitPrice>=min&&p.UnitPrice<=max));
