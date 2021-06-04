@@ -10,3 +10,24 @@
 2021-06-04 19:31:26.709 +03:00 [INF] System.Object[] started.
 2021-06-04 19:31:27.938 +03:00 [INF] GetAll successfully worked
 2021-06-04 19:31:27.941 +03:00 [INF] GetAll has finished working.
+2021-06-04 19:38:31.934 +03:00 [INF] Application Starting.
+2021-06-04 19:39:05.246 +03:00 [INF] GetAll started.
+2021-06-04 19:39:08.234 +03:00 [INF] GetAll successfully worked
+2021-06-04 19:39:08.238 +03:00 [INF] GetAll has finished working.
+2021-06-04 19:41:12.502 +03:00 [INF] Application Starting.
+2021-06-04 19:41:22.593 +03:00 [INF] GetAll started.
+2021-06-04 19:41:23.939 +03:00 [INF] GetAll successfully worked
+2021-06-04 19:41:23.942 +03:00 [INF] GetAll has finished working.
+2021-06-04 19:43:46.610 +03:00 [INF] Application Starting.
+2021-06-04 19:54:44.349 +03:00 [INF] Application Starting.
+2021-06-04 19:55:11.810 +03:00 [INF] GetAll started.
+2021-06-04 19:55:15.047 +03:00 [INF] GetAll successfully worked
+2021-06-04 19:55:15.050 +03:00 [INF] GetAll has finished working.
+2021-06-04 19:56:16.486 +03:00 [INF] Application Starting.
+2021-06-04 19:56:35.979 +03:00 [INF] GetAll started.
+2021-06-04 19:56:37.194 +03:00 [INF] GetAll successfully worked
+2021-06-04 19:56:37.197 +03:00 [INF] GetAll has finished working.
+2021-06-04 19:57:20.993 +03:00 [INF] Application Starting.
+2021-06-04 19:57:25.998 +03:00 [INF] GetAll started.
+2021-06-04 19:57:27.270 +03:00 [INF] GetAll successfully worked
+2021-06-04 19:57:27.273 +03:00 [INF] GetAll has finished working.
